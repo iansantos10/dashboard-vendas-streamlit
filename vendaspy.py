@@ -14,13 +14,12 @@ df = pd.DataFrame(data)
 faturamento_total = df["faturamento"].sum()
 media = df["faturamento"].mean()
 
-# 👉 NOVO KPI (crescimento)
 crescimento = ((df["faturamento"].iloc[-1] - df["faturamento"].iloc[0]) 
                / df["faturamento"].iloc[0]) * 100
 
 st.title("📊 Dashboard de Vendas")
 
-# 👉 Agora são 3 colunas
+# Colunas
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Faturamento Total", f"R$ {faturamento_total:,.0f}")
